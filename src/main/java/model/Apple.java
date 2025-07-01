@@ -1,5 +1,6 @@
 package model;
 
+import model.constants.Colour;
 import model.constants.Discount;
 
 public class Apple extends Food{
@@ -7,13 +8,13 @@ public class Apple extends Food{
     public Apple (int amount, double price){
         super(amount, price, false);
     }
-    //60% и все эти условия сюда впиливать чтоли, чет както не понятно
-    @Override
-    public Apple(String colour){
-        if (colour == "red"){
-            return ????;
-        } else {
 
+
+
+    public byte Apple(String colour){
+        if (Colour.RED.equalsIgnoreCase(colour)) {
+            return Discount.RED;
         }
+        return Discount.ZERO;
     }
 }

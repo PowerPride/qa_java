@@ -3,16 +3,17 @@ package model;
 import model.constants.Colour;
 import model.constants.Discount;
 
-public class Apple extends Food{
-    protected String colour;
-    public Apple (int amount, double price){
-        super(amount, price, false);
+public class Apple extends Food implements Discountable{
+    public String colour;
+    public Apple (int amount, double price, String colour){
+        super(amount, price);
+        this.colour = colour;
+        this.isVegetarian = true;
     }
 
-
-
-    public byte Apple(String colour){
-        if (Colour.RED.equalsIgnoreCase(colour)) {
+    @Override
+    public double getDiscount(){
+        if (colour.equals(Colour.RED)) {
             return Discount.RED;
         }
         return Discount.ZERO;

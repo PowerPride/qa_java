@@ -7,13 +7,10 @@ public abstract class Food {
     protected double price;
     protected boolean isVegetarian;
 
-    public Food(int amount, double price, boolean isVegetarian) {
+    public Food(int amount, double price) {
         this.amount = amount;
         this.price = price;
-        this.isVegetarian = isVegetarian;
-    }
 
-    protected Food() {
     }
 
     public double getAmount() {
@@ -26,5 +23,9 @@ public abstract class Food {
 
     public double getDiscount() {
         return Discount.ZERO;
+    }
+
+    public boolean isVegetarian() {
+        return isVegetarian;
     }
 }

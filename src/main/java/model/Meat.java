@@ -1,9 +1,8 @@
 package model;
 
-public class Meat extends Food{
+public class Meat extends Food implements Discountable{
     public Meat(int amount, double price) {
-        super(amount,
-                price,
-                false);
+        super(amount, price);
+        this.isVegetarian = false;
     }
 }

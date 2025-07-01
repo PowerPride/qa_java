@@ -1,5 +1,7 @@
 package model;
 
+import model.constants.Discount;
+
 public abstract class Food {
     protected int amount;
     protected double price;
@@ -12,5 +14,17 @@ public abstract class Food {
     }
 
     protected Food() {
+    }
+
+    public double getAmount() {
+        return amount;
+    }
+
+    public double getPrice() {
+        return price;
+    }
+
+    public double getDiscount() {
+        return Discount.ZERO;
     }
 }
